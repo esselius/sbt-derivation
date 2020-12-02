@@ -68,7 +68,7 @@ let
         find ${depsDir} -name '*.log' -type f -print0 | xargs -0 rm -rfv
 
         echo "fixing-up the compiler bridge"
-        find ${depsDir} -name 'org.scala-sbt-compiler-bridge_*' -type f -print0 | xargs -0 strip-nondeterminism
+        find ${depsDir} -name 'org.scala-sbt-compiler-bridge_*' -type f -print0 | xargs -r -0 strip-nondeterminism
 
         echo "removing runtime jar"
         find ${depsDir} -name rt.jar -delete
